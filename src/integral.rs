@@ -12,7 +12,11 @@ fn integrate(operations: Vec<String>) -> Vec<String> {
 
             if operations[operation] == "x" {
                 operations_integrateds.push(("x^2/2").to_string());
-            } 
+            }
+            
+            if operations[operation].contains("^") {
+                // let operation_splited
+            }
 
         }
     
