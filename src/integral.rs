@@ -1,4 +1,5 @@
 use std::any::Any;
+use eval::eval;
 
 pub trait Object {
     fn type_name(&self) -> &str;
@@ -32,6 +33,14 @@ fn integrate(operations: Vec<String>) -> Vec<String> {
             
             if is_of_type::<f32>(&operations[operation].parse::<f32>().unwrap()) {
                 operations_integrateds.push((format!("{}x", operations[operation])).to_string());
+            }
+
+            if operations[operation].contains("^") {
+                // let operation_splited: Split<&str> = operations[operation].to_string().split("^");
+                // println!("{:?}", operation_splited);
+                if is_of_type::<f32>(eval(&operations[operation].to_string()).parse::<f32>().unwrap()) {
+                    // operations_integrateds.push((format!("{}x", operations[operation])).to_string());
+                }
             }
 
         }
