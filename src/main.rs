@@ -23,17 +23,27 @@ fn main() {
         operations.push(operation.trim().to_string());
     }
 
-    let mut limits: Vec<f32> = Vec::new();
+    let mut limits_operations: Vec<<f32>> = Vec::new();
 
     for limit_input in 1..amount_operations + 1 {
-        let inferior_limit: String = loop {
+        let inferior_limit: f32 = loop {
             let inferior_limit_message: String = format!("Input the inferior limit of operation nº {}: ", limit_input);
             if let Ok(inferior_limit_message_validity) = input(&inferior_limit_message) {
                 break inferior_limit_message_validity
             };
             println!("Invalid value! Input a float number. Try again.");
         };
-        // operations.push(operation.trim().to_string());
+        let superior_limit: f32 = loop {
+            let superior_limit_message: String = format!("Input the superior limit of operation nº {}: ", limit_input);
+            if let Ok(superior_limit_message_validity) = input(&superior_limit_message) {
+                break superior_limit_message_validity
+            };
+            println!("Invalid value! Input a float number. Try again.");
+        };
+        let mut limits_operation: Vec<f32> = Vec::new();
+        limits_operation.push(inferior_limit);
+        limits_operation.push(superior_limit);
+        limits_operations.push(limits_operation);
     }
     
 
