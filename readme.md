@@ -1,3 +1,3 @@
-## Definte Integral Calculator
+# Definte Integral Calculator
 
-# How use:
+## How use:
