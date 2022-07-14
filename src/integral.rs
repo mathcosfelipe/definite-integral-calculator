@@ -1,9 +1,21 @@
-// const axes: [String, 2] = ["a"; "b"];
-
 fn integrate(operations: Vec<String>) -> Vec<String> {
 
+    let mut operations_integrateds: Vec<String> = Vec::new();
+
     for operation in 0..operations.len() {
-        println!("{}", operations[operation]);
+        
+        if operations[operation].contains("x") {
+            
+            if operations[operation] == "-x" {
+                operations_integrateds.push(("-x^2/2").to_string());
+            }
+
+            if operations[operation] == "x" {
+                operations_integrateds.push(("x^2/2").to_string());
+            } 
+
+        }
+    
     }
 
     operations
