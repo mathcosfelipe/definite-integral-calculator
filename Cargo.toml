@@ -5,3 +5,4 @@ edition = "2021"
 
 [dependencies]
 beginner_tools = "1.1.1"
+eval = "0.4.3"
