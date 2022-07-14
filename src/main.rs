@@ -23,7 +23,7 @@ fn main() {
         operations.push(operation.trim().to_string());
     }
 
-    let mut limits_operations: Vec<<f32>> = Vec::new();
+    let mut limits_operations: Vec<Vec<f32>> = Vec::new();
 
     for limit_input in 1..amount_operations + 1 {
         let inferior_limit: f32 = loop {
